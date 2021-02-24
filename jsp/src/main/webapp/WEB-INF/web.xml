@@ -1,0 +1,67 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>empList</servlet-name>
+  	<display-name>empList</display-name>
+  	<description></description>
+  	<servlet-class>emp.empList</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EmpInsert</servlet-name>
+  	<display-name>EmpInsert</display-name>
+  	<description></description>
+  	<servlet-class>emp.serv.EmpInsert</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>DeptDAO</servlet-name>
+  	<display-name>DeptDAO</display-name>
+  	<description></description>
+  	<servlet-class>emp.dao.DeptDAO</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>JobDAO</servlet-name>
+  	<display-name>JobDAO</display-name>
+  	<description></description>
+  	<servlet-class>emp.dao.JobDAO</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EmailCheck</servlet-name>
+  	<display-name>EmailCheck</display-name>
+  	<description></description>
+  	<servlet-class>emp.serv.EmailCheck</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>EmpUpdate</servlet-name>
+  	<display-name>EmpUpdate</display-name>
+  	<description></description>
+  	<servlet-class>emp.serv.EmpUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>empList</servlet-name>
+  	<url-pattern>/empList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmpInsert</servlet-name>
+  	<url-pattern>/EmpInsert</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeptDAO</servlet-name>
+  	<url-pattern>/DeptDAO</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>JobDAO</servlet-name>
+  	<url-pattern>/JobDAO</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmailCheck</servlet-name>
+  	<url-pattern>/EmailCheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EmpUpdate</servlet-name>
+  	<url-pattern>/EmpUpdate</url-pattern>
+  </servlet-mapping>
+</web-app>
