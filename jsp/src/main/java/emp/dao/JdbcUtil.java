@@ -9,10 +9,11 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 public class JdbcUtil {
-	static String dbdriver = "oracle.jdbc.OracleDriver";    
-	static String dburl = "jdbc:oracle:thin:@localhost:1521:xe";
-	static String user = "hr";
-	static String passwd = "hr";
+	/*
+	 * static String dbdriver = "oracle.jdbc.OracleDriver"; static String dburl =
+	 * "jdbc:oracle:thin:@localhost:1521:xe"; static String user = "hr"; static
+	 * String passwd = "hr";
+	 */
 	
 	// DB연결 메서드
 	public static Connection connect() {
@@ -21,6 +22,7 @@ public class JdbcUtil {
 			/*
 			 * Class.forName(dbdriver); conn = DriverManager.getConnection (dburl, user, passwd);
 			 */
+			
 			//dbcp connection
 			Context initContext = new InitialContext(); // Was(tomcat)을 가리킴
 			Context envContext  = (Context)initContext.lookup("java:/comp/env"); //jndi, 최상위 폴더

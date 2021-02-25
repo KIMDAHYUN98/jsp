@@ -14,10 +14,20 @@
 		$('#btnEmail').on("click", function() {
 			$.ajax({
 				url : '../EmailCheck',
-				data : "email=" + ﻿$("[name=email]").val(),
+				data : "email=" + ﻿$("[name=email]").val(), // 서버에 보낼 파라미터
+				dataType : "xml", 						   // 결과 타입
 				success: function(response) {
 					//span 태그에 출력
-					$('#emailResult').append(response);
+					/* json
+					if(response.email == true) {
+					$('#emailResult').html("<font color='blue'>사용가능></font>");						
+					} else {
+					$('#emailResult').html("<font color='blue'>사용불가능></font>");
+					}*/
+					
+					// xml (= html 태그 찾는 법과 동일)
+					// 태그안에 있는 값을 읽어오는데..
+					$('#emailResult').html($(response).find("email").text()) // jquery 함수
 				},
 			})
 		})
@@ -26,9 +36,9 @@
 </head>
 <body>
 <h3 id="top">사원등록</h3>
-<c:set var="url" value="../EmpInsert" />
+<c:set var="url" value="./EmpInsert" />
 <c:if test="${not empty empVO.employee_id }">
-<c:set var="url" value="../EmpUpdate" />
+<c:set var="url" value="./EmpUpdate" />
 </c:if>
 <form action="${url}" method="post" name="frm">
 	employee_id <input type="number" name="employee_id"
